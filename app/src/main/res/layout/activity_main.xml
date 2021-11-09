@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--第二步 修改布局“根”节点-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+
+    <!--设置数据源-->
+    <data class="TestBinding1905">
+        <variable
+            name="owner"
+            type="com.zy.jetpack.MainActivity" />
+        <variable
+            name="user"
+            type="com.zy.jetpack.UserEntity" />
+    </data>
+
+    <!--原有布局降级为子节点-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_demo_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{(view)->owner.doAction(view,user)}"/>
+
+        <!--text属性绑定-->
+        <TextView
+            android:id="@+id/tv_demo_content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@={user.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_demo_test"></TextView>
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_demo_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:imgUrl="@{user.imgUrl}"
+            ></ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
