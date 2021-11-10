@@ -43,15 +43,34 @@
 
         <ImageView
 
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:imgUrl="@{user.imgUrl}"
             app:layout_constraintBottom_toTopOf="@+id/btn_demo_test"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:imgUrl="@{user.imgUrl}"
-            ></ImageView>
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view)->owner.doLiveDataTestAction(view)}"
+            android:text="LiveData Test Btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view)->owner.doRoomAction(view)}"
+            android:text="Room Test Btn"
+            app:layout_constraintBottom_toTopOf="@+id/btn_demo_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
