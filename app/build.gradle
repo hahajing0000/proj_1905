@@ -1,6 +1,11 @@
 apply plugin: 'com.android.application'
+
+apply plugin: 'dagger.hilt.android.plugin'
+
 def lifecycle_version = "2.4.0"
 def room_version = "2.3.0"
+def hilt_version="2.28-alpha"
+def retrofit_version="2.0.2"
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -52,4 +57,9 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
 }

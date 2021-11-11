@@ -8,6 +8,7 @@ import java.util.Stack;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import dagger.hilt.android.HiltAndroidApp;
 
 /**
  * @ProjectName: JetPack1905Demo1
@@ -21,6 +22,7 @@ import androidx.annotation.Nullable;
  * @UpdateRemark:
  * @Version: 1.0
  */
+@HiltAndroidApp
 public class MyApplication extends Application {
 
     static Stack<Activity> activities=new Stack<>();
